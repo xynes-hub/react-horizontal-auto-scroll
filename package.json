@@ -33,16 +33,16 @@
         "singleQuote": true,
         "trailingComma": "es5"
     },
-    "name": "react-horizontal-scroll",
+    "name": "react-horizontal-auto-scroll",
     "author": "Aman",
-    "module": "dist/react-horizontal-scroll.esm.js",
+    "module": "dist/react-horizontal-auto-scroll.esm.js",
     "size-limit": [
         {
-            "path": "dist/react-horizontal-scroll.cjs.production.min.js",
+            "path": "dist/react-horizontal-auto-scroll.cjs.production.min.js",
             "limit": "10 KB"
         },
         {
-            "path": "dist/react-horizontal-scroll.esm.js",
+            "path": "dist/react-horizontal-auto-scroll.esm.js",
             "limit": "10 KB"
         }
     ],
