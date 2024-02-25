@@ -1,5 +1,8 @@
 {
-    "version": "2.0.1",
+    "version": "2.0.2",
+    "homepage":"https://github.com/xynes-hub/react-horizontal-auto-scroll",
+    "author": "Aman Kazi <aman@xynes.com>",
+    "keywords": ["react","reactjs", "scrolling", "horizontal" ,"automatic","smooth" ,"scroll", "scroller"],
     "license": "MIT",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
@@ -34,7 +37,6 @@
         "trailingComma": "es5"
     },
     "name": "react-horizontal-auto-scroll",
-    "author": "Aman",
     "module": "dist/react-horizontal-auto-scroll.esm.js",
     "size-limit": [
         {
@@ -58,8 +60,5 @@
         "tsdx": "^0.14.1",
         "tslib": "^2.6.2",
         "typescript": "^3.9.10"
-    },
-    "dependencies": {
-        "uuid": "^9.0.1"
     }
 }
