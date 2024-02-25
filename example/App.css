@@ -1,0 +1,38 @@
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.row {
+  display: flex;
+  overflow-x: auto; 
+  margin: 15px 0 15px 0;
+  align-items: center;
+}
+
+.col {
+  display: flex;
+  height: 500px;
+  width: 25%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background-color: #f1f1f1;
+  margin: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.col p {
+  justify-content: center;
+  padding: 20px;
+  font-size: 40px;
+}
+.col:hover{
+  background-color: white;
+}

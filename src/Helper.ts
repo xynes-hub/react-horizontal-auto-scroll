@@ -1,25 +1,21 @@
-import { ScrollerProps } from ".";
+import { ScrollerOptionalProps, ScrollerProps } from ".";
 
-export const registerEvent = async (id: string, props: ScrollerProps) => {
-    let el = document.querySelector("#" + id);
-    // let inViewport = false;
-    while (!el) {
-        await wait(500);
-        el = document.querySelector("#" + id);
-    }
+export const registerEvent = (el: HTMLInputElement | null, props: ScrollerOptionalProps) => {
     
     if (el != null) {
-        let d: Element = el;
-        document.addEventListener('wheel', (evt:WheelEvent) => {
+        let d: HTMLInputElement = el;
+        const wheel = (evt: WheelEvent) => {
             let deltaY = evt.deltaY;
-            scrollhandle(evt,deltaY, props, d)
-        }, { passive: false });
+            scrollhandle(evt, deltaY, props, d)
+        }
+        document.addEventListener('wheel',wheel , { passive: false });
         var ts: number;
-        document.addEventListener('touchstart', function (e) {
+        const touchstart = (e: TouchEvent) => {
             console.log(e)
             ts = e.changedTouches[0].clientY;
-        });
-        document.addEventListener('touchmove', (evt:TouchEvent) => {
+        }
+        document.addEventListener('touchstart', touchstart);
+        const touchmove = (evt: TouchEvent) => {
             var te = evt.changedTouches[0].clientY;
             let deltaY: number;
             if (ts > te) {
@@ -28,9 +24,18 @@ export const registerEvent = async (id: string, props: ScrollerProps) => {
                 deltaY = -100;
             }
             scrollhandle(evt, deltaY, props, d)
-        }, { passive: false });
+        }
+        document.addEventListener('touchmove', touchmove, { passive: false });
+        return function cleanUp() {
+            document.removeEventListener('wheel', wheel);
+            document.removeEventListener('touchstart', touchstart);
+            document.removeEventListener('touchmove', touchmove)
+            console.log("event listeners removed");
+        }
     }
-
+    return () => {
+        console.log("no event listeners removed");
+    }
 }
 
 export const wait = (ms:number) => new Promise((resolve) => {

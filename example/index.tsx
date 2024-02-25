@@ -1,12 +1,20 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import './App.css';
 import  Scroller  from '../.';
+import { GenRowCol } from './GenCol';
 
 const App = () => {
   return (
     <div>
-      <Scroller><h1>he3loooo</h1></Scroller>
+      <h1>Heyy</h1>
+      <GenRowCol num={3} bg="orange" />
+      <GenRowCol num={3} bg="green" />
+      <GenRowCol num={11} />
+      <GenRowCol num={2} bg="teal" />
+      <GenRowCol num={7} bg="pink" />
+      <GenRowCol num={3} bg="violet" />
     </div>
   );
 };
