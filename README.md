@@ -45,16 +45,12 @@ function  App() {
 
 | Name        | Required     | Type | Default | Description|
 |:----        |:----     |:----          |:----       |:----|
-
 |scrollSpeed |`false`| `Number` | |Scroll speed depends on number ranging from 1-10 |
 |isSlideShow |`false`| `Boolean` | |When set to true the horizontal scrolling will work kind of like a slideshow|
 |reverse |`false`| `Boolean` | |When set to true horizontal reverse scrolling will trigger while scrolling up  |
 |children |`false`| `ReactNode` | | A number of child elements need to passed for it to work |
 
 > You can pass all html props to Scroller.
-
-
-
 
 
 
