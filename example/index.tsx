@@ -2,7 +2,6 @@ import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import './App.css';
-import  Scroller  from '../.';
 import { GenRowCol } from './GenCol';
 
 const App = () => {

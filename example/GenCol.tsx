@@ -11,7 +11,7 @@ export const GenRowCol = (props) => {
         }
         setArr(a);
     }, [])
-    return <Scroller className="row" style={{ backgroundColor: props.bg || 'DodgerBlue'}} >{arr && arr.map(index =>
+    return <Scroller className="row" style={{ backgroundColor: props.bg || 'DodgerBlue'}} reverse isSlideShow>{arr && arr.map(index =>
 
 
         <Col key={index}>{index}</Col>

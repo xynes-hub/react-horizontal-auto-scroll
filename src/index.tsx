@@ -9,7 +9,7 @@ import { registerEvent } from './Helper';
 export interface ScrollerOptionalProps {
   scrollSpeed?: number, //1-10,
   isSlideShow?: boolean,
-  up?: boolean,
+  reverse?: boolean,
 }
 
 // Combine required and optional props to build the full prop interface
@@ -21,29 +21,23 @@ export interface ScrollerProps
 const defaultProps: ScrollerOptionalProps = {
   scrollSpeed: 3,
   isSlideShow: false,
-  up:false
+  reverse:false
 };
 
 const Scroller = (props: ScrollerProps) => {
   //let [id, setId] = React.useState<string>();
   let sc = React.useRef<HTMLInputElement>(null)
-  let { scrollSpeed, isSlideShow, up,children, ...rest } = props;
+  let { scrollSpeed, isSlideShow, reverse,children, ...rest } = props;
   React.useEffect(() => {
     //let uniqueId = "_" + uuidv4();
     //setId(uniqueId);
     let scProps :ScrollerOptionalProps = {
       scrollSpeed,
       isSlideShow,
-      up
+      reverse
     }; 
 
     const element = sc.current;
-    
-      element?.addEventListener("wheel", (e) => {
-        console.log("scroll", e.deltaY)
-        e.preventDefault();
-      })
-      
     
     return registerEvent(element, scProps);
   }, [sc]);
